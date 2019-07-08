@@ -1,0 +1,21 @@
+image: javiersantos/android-ci:27.0.3
+
+before_script:
+  - export GRADLE_USER_HOME=`pwd`./src/.gradle
+  - chmod +x ./src/gradlew
+
+cache:
+  key: "$CI_COMMIT_REF_NAME"
+  paths:
+    - ./src/.gradle/
+
+stages:
+  - build
+
+build:
+  stage: build
+  script:
+    - ./src/gradlew assembleDebug
+  artifacts:
+    paths:
+      - ./src/app/build/outputs/apk/
