@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.ilusons.notioff.MainActivity"
+    tools:showIn="@layout/app_bar_main">
+
+    <ImageButton
+        android:id="@+id/all_status"
+        style="@android:style/Widget.Material.Light.Button.Borderless.Small"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_margin="72dp"
+        android:background="@null"
+        android:ellipsize="end"
+        android:padding="0dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_notifications_active_black"
+        android:tint="@android:color/holo_green_light"
+        android:tintMode="src_in"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="3dp"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/all_status"
+        tools:layoutManager="android.support.v7.widget.LinearLayoutManager"
+        tools:listitem="@layout/profile"/>
+
+</android.support.constraint.ConstraintLayout>

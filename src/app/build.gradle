@@ -1,0 +1,72 @@
+apply plugin: 'com.android.application'
+apply plugin: 'realm-android'
+
+// Keys
+def keys_keyAlias = ""
+def keys_keyPassword = ""
+def keys_storePassword = ""
+try {
+    def keys = new Properties()
+    file("$rootDir/../safe/keys.properties").withInputStream { keys.load(it) }
+
+    keys_keyAlias = keys.getProperty("keyAlias", "")
+    keys_keyPassword = keys.getProperty("keyPassword", "")
+    keys_storePassword = keys.getProperty("storePassword", "")
+} catch (ex) {
+    println(ex)
+}
+
+android {
+    signingConfigs {
+        config {
+            keyAlias keys_keyAlias
+            keyPassword keys_keyPassword
+            storeFile file("$rootDir/../safe/keystore.jks")
+            storePassword keys_storePassword
+        }
+    }
+    compileSdkVersion 27
+    buildToolsVersion '27.0.3'
+    defaultConfig {
+        applicationId "com.ilusons.notioff"
+        minSdkVersion 21
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled = true
+    }
+    buildTypes {
+        debug {
+            versionNameSuffix '-debug'
+        }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            versionNameSuffix '-release'
+            signingConfig signingConfigs.config
+            debuggable false
+            jniDebuggable false
+            renderscriptDebuggable false
+            zipAlignEnabled true
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support:support-v4:27.1.1'
+    implementation 'com.android.support:design:27.1.1'
+    implementation 'com.android.support:recyclerview-v7:27.1.1'
+    implementation 'com.android.support:cardview-v7:27.1.1'
+    implementation 'com.daimajia.swipelayout:library:1.2.0@aar'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    //noinspection GradleDependency
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation 'com.anthonycr.grant:permissions:1.1.2'
+    implementation 'jp.wasabeef:recyclerview-animators:2.2.7'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+}

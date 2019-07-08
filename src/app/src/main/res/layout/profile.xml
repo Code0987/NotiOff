@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.CardView
+    android:id="@+id/root"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:res="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    res:cardBackgroundColor="@color/transparent"
+    res:cardCornerRadius="0dp"
+    res:cardElevation="0dp"
+    res:elevation="0dp">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ProgressBar
+            android:id="@+id/progress"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="6dp"
+            android:layout_marginEnd="-3dp"
+            android:layout_marginStart="-3dp"
+            android:layout_marginTop="-12dp"
+            android:indeterminate="true"
+            android:visibility="gone"
+            res:layout_constraintEnd_toStartOf="parent"
+            res:layout_constraintStart_toStartOf="parent"
+            res:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible"/>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/buttons"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            res:layout_constraintEnd_toEndOf="parent"
+            res:layout_constraintStart_toStartOf="parent"
+            res:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:ellipsize="marquee"
+                android:gravity="bottom"
+                android:singleLine="true"
+                android:textColor="@color/secondary_text"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                res:layout_constraintBottom_toBottomOf="parent"
+                res:layout_constraintEnd_toStartOf="@+id/set_active"
+                res:layout_constraintStart_toStartOf="parent"
+                res:layout_constraintTop_toTopOf="parent"
+                tools:text="Title"/>
+
+            <ImageButton
+                android:id="@+id/set_active"
+                style="@android:style/Widget.Material.Light.Button.Borderless.Small"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_margin="0dp"
+                android:background="@null"
+                android:ellipsize="end"
+                android:padding="3dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_check_black"
+                android:tint="@android:color/holo_green_light"
+                android:tintMode="src_in"
+                res:layout_constraintBottom_toBottomOf="parent"
+                res:layout_constraintEnd_toStartOf="@+id/remove"
+                res:layout_constraintTop_toTopOf="parent"/>
+
+            <ImageButton
+                android:id="@+id/remove"
+                style="@android:style/Widget.Material.Light.Button.Borderless.Small"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_margin="0dp"
+                android:background="@null"
+                android:ellipsize="end"
+                android:padding="3dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_remove_circle_outline_black"
+                android:tint="@android:color/holo_red_dark"
+                android:tintMode="src_in"
+                res:layout_constraintBottom_toBottomOf="parent"
+                res:layout_constraintEnd_toStartOf="@+id/add"
+                res:layout_constraintTop_toTopOf="parent"/>
+
+            <ImageButton
+                android:id="@+id/add"
+                style="@android:style/Widget.Material.Light.Button.Borderless.Small"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_margin="0dp"
+                android:background="@null"
+                android:ellipsize="end"
+                android:padding="3dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_apps_black"
+                android:tint="@android:color/holo_blue_dark"
+                android:tintMode="src_in"
+                res:layout_constraintBottom_toBottomOf="parent"
+                res:layout_constraintEnd_toEndOf="parent"
+                res:layout_constraintTop_toTopOf="parent"/>
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:scrollbars="vertical"
+            res:layout_constraintBottom_toBottomOf="parent"
+            res:layout_constraintEnd_toEndOf="parent"
+            res:layout_constraintStart_toStartOf="parent"
+            res:layout_constraintTop_toBottomOf="@id/buttons"
+            tools:layoutManager="android.support.v7.widget.LinearLayoutManager"
+            tools:listitem="@layout/profile_item"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.v7.widget.CardView>
+
