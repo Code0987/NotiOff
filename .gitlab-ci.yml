@@ -1,4 +1,4 @@
-image: javiersantos/android-ci:27.0.3
+image: javiersantos/android-ci:latest
 
 before_script:
   - git clone https://Gitlab:$GITLAB_TOKEN@gitlab.com/Code0987/NotiOff-Safe.git safe
