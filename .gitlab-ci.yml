@@ -1,7 +1,7 @@
 image: javiersantos/android-ci:27.0.3
 
 before_script:
-  - git clone https://Gitlab:$GITLAB_TOKEN@gitlab.com/Code0987/NotiOff-Safe.git
+  - git clone https://Gitlab:$GITLAB_TOKEN@gitlab.com/Code0987/NotiOff-Safe.git safe
   - export GRADLE_USER_HOME=`pwd`./src/.gradle
   - chmod +x ./src/gradlew
 
@@ -16,7 +16,10 @@ stages:
 build:
   stage: build
   script:
-    - ./src/gradlew assemble
+    - ls
+    - cd ./src
+    - gradlew tasks
+    - gradlew build
   artifacts:
     paths:
       - ./src/app/build/outputs/apk/
