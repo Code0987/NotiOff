@@ -16,8 +16,7 @@ stages:
 build:
   stage: build
   script:
-    - ./src/gradlew tasks
-    - ./src/gradlew build
+    - ./src/gradlew -p ./src build
   artifacts:
     paths:
       - ./src/app/build/outputs/apk/
