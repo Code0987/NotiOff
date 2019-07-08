@@ -1,8 +1,10 @@
 image: javiersantos/android-ci:27.0.3
 
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
+  
 before_script:
-  - git submodule sync --recursive
-  - git submodule update --init --recursive
+  - git clone https://Gitlab:$GITLAB_TOKEN@gitlab.com/Code0987/NotiOff-Safe.git
   - export GRADLE_USER_HOME=`pwd`./src/.gradle
   - chmod +x ./src/gradlew
 
