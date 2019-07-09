@@ -33,8 +33,6 @@ publish_github:
   image: node:12
   stage: publish
   before_script:
-    - git --version
-    - ls
     - npm install
   script:
     - npx semantic-release
