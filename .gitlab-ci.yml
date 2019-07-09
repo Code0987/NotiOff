@@ -1,6 +1,8 @@
 image: javiersantos/android-ci:latest
 
 before_script:
+  - git config user.email 'gitlab+ci+bot@ilusons.com'
+  - git config user.name 'Gitlab CI Bot'
   - git clone https://Gitlab:$GITLAB_TOKEN@gitlab.com/Code0987/NotiOff-Safe.git safe
   - export GRADLE_USER_HOME=`pwd`./src/.gradle
   - chmod +x ./src/gradlew
@@ -9,9 +11,12 @@ cache:
   key: "$CI_COMMIT_REF_NAME"
   paths:
     - ./src/.gradle/
+    - ./src/app/build/outputs/apk/
 
 stages:
   - build
+  - release
+  - deploy
 
 build:
   stage: build
@@ -20,3 +25,19 @@ build:
   artifacts:
     paths:
       - ./src/app/build/outputs/apk/
+
+release:
+  image: node:apline
+  stage: release
+  before_script:
+    - npm install -g semantic-release-cli
+  script:
+    - npx semantic-release
+
+deploy_github:
+  image: golang:apline
+  stage: deploy
+  before_script:
+    - go get github.com/github/hub
+  script:
+    - hub release create -a ./src/app/build/outputs/apk/release/app-release.apk
