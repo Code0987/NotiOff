@@ -26,7 +26,7 @@ build:
       - ./src/app/build/outputs/apk/
 
 publish_github:
-  image: node:12-alpine
+  image: node:12
   stage: publish
   before_script:
     - git --version

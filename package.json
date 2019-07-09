@@ -1,0 +1,26 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "none",
+  "dependencies": {},
+  "devDependencies": {
+    "@gradle/semantic-release-plugin": "^1.0.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Code0987/NotiOff.git"
+  },
+  "keywords": [
+    "android"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Code0987/NotiOff/issues"
+  },
+  "homepage": "https://github.com/Code0987/NotiOff#readme"
+}
