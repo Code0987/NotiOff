@@ -18,6 +18,8 @@ stages:
   - publish
 
 build:
+  only:
+    - master
   stage: build
   script:
     - ./src/gradlew -p ./src build
@@ -26,6 +28,8 @@ build:
       - ./src/app/build/outputs/apk/
 
 publish_github:
+  only:
+    - master
   image: node:12
   stage: publish
   before_script:
