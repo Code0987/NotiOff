@@ -6,7 +6,7 @@
     [
       "gradle-semantic-release-plugin",
       {
-        "wd": "src"
+        "pd": "src"
       }
     ],
     [

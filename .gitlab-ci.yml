@@ -33,6 +33,7 @@ publish_github:
   image: node:12
   stage: publish
   before_script:
+    - sudo chmod 755 ./src/gradlew
     - npm install
   script:
     - npx semantic-release
