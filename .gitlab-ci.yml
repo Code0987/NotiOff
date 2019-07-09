@@ -30,7 +30,7 @@ publish_github:
   stage: publish
   before_script:
     - git --version
-    - ls  
-    - npm install semantic-release@latest
+    - ls
+    - npm install
   script:
     - npx semantic-release
