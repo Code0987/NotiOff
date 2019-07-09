@@ -15,8 +15,7 @@ cache:
 
 stages:
   - build
-  - release
-  - deploy
+  - publish
 
 build:
   stage: build
@@ -26,18 +25,10 @@ build:
     paths:
       - ./src/app/build/outputs/apk/
 
-release:
-  image: node:alpine
-  stage: release
+publish_github:
+  image: node:12-alpine
+  stage: publish
   before_script:
-    - npm install semantic-release@15.0.1
+    - npm install semantic-release@latest
   script:
     - npx semantic-release
-
-deploy_github:
-  image: golang:alpine
-  stage: deploy
-  before_script:
-    - go get github.com/github/hub
-  script:
-    - hub release create -a ./src/app/build/outputs/apk/release/app-release.apk
