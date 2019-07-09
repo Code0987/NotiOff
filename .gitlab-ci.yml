@@ -27,7 +27,7 @@ build:
       - ./src/app/build/outputs/apk/
 
 release:
-  image: node:apline
+  image: node:alpine
   stage: release
   before_script:
     - npm install -g semantic-release-cli
@@ -35,7 +35,7 @@ release:
     - npx semantic-release
 
 deploy_github:
-  image: golang:apline
+  image: golang:alpine
   stage: deploy
   before_script:
     - go get github.com/github/hub
