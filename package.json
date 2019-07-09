@@ -4,8 +4,8 @@
   "description": "",
   "main": "none",
   "dependencies": {
-    "semantic-release": "^15.13.18",
-    "@gradle/semantic-release-plugin": "^1.0.2"
+    "gradle-semantic-release-plugin": "github:Code0987/gradle-semantic-release-plugin",
+    "semantic-release": "^15.13.18"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
