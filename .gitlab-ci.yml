@@ -30,7 +30,7 @@ release:
   image: node:alpine
   stage: release
   before_script:
-    - npm install -g semantic-release-cli@15.0.0
+    - npm install -g semantic-release@15.0.1
   script:
     - npx semantic-release
 
