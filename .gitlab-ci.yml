@@ -29,6 +29,8 @@ publish_github:
   image: node:12-alpine
   stage: publish
   before_script:
+    - git --version
+    - ls  
     - npm install semantic-release@latest
   script:
     - npx semantic-release
