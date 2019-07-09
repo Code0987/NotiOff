@@ -30,7 +30,7 @@ build:
 publish_github:
   only:
     - master
-  image: timbru31/java-node:8
+  image: loyaltyone/docker-alpine-java-node
   stage: publish
   before_script:
     - npm install
