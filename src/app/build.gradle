@@ -28,12 +28,6 @@ android {
             storePassword keys_storePassword
         }
     }
-    playAccountConfigs {
-        defaultAccountConfig {
-            serviceAccountEmail = keys_serviceAccountEmail
-            jsonFile = file("$rootDir/../safe/google-play-android-developer.json")
-        }
-    }
     compileSdkVersion 28
 	defaultConfig {
         applicationId "com.ilusons.notioff"
@@ -79,6 +73,8 @@ dependencies {
 }
 
 play {
+    serviceAccountEmail=keys_serviceAccountEmail
+    jsonFile=file("$rootDir/../safe/google-play-android-developer.json")
     track='production'
     userFraction=0.9
     untrackOld=true
