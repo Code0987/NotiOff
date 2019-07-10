@@ -6,7 +6,7 @@
     [
       "gradle-semantic-release-plugin",
       {
-        "pd": "src",
+        "pd": "./src",
         "t": "app:build"
       }
     ],
