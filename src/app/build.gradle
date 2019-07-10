@@ -1,10 +1,12 @@
 apply plugin: 'com.android.application'
 apply plugin: 'realm-android'
+apply plugin: 'com.github.triplet.play'
 
 // Keys
 def keys_keyAlias = ""
 def keys_keyPassword = ""
 def keys_storePassword = ""
+def keys_serviceAccountEmail = ""
 try {
     def keys = new Properties()
     file("$rootDir/../safe/keys.properties").withInputStream { keys.load(it) }
@@ -12,6 +14,7 @@ try {
     keys_keyAlias = keys.getProperty("keyAlias", "")
     keys_keyPassword = keys.getProperty("keyPassword", "")
     keys_storePassword = keys.getProperty("storePassword", "")
+    keys_serviceAccountEmail = keys.getProperty("serviceAccountEmail", "")
 } catch (ex) {
     println(ex)
 }
@@ -23,6 +26,12 @@ android {
             keyPassword keys_keyPassword
             storeFile file("$rootDir/../safe/keystore.jks")
             storePassword keys_storePassword
+        }
+    }
+    playAccountConfigs {
+        defaultAccountConfig {
+            serviceAccountEmail = keys_serviceAccountEmail
+            jsonFile = file("$rootDir/../safe/google-play-android-developer.json")
         }
     }
     compileSdkVersion 28
@@ -67,4 +76,12 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+}
+
+play {
+    track='production'
+    userFraction=0.9
+    untrackOld=true
+    errorOnSizeLimit=true
+    uploadImages=false
 }
