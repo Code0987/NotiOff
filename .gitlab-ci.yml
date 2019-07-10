@@ -30,7 +30,7 @@ build:
 publish_github:
   only:
     - master
-  image: loyaltyone/docker-alpine-java-node
+  image: code0987/java-node:8
   stage: publish
   before_script:
     - npm install
