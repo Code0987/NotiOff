@@ -19,7 +19,7 @@
       "gradle-semantic-release-plugin",
       {
         "pd": "./src",
-        "t": "app:publishApkRelease"
+        "t": "app:publishReleaseApk"
       }
     ],
     [
