@@ -1,11 +1,13 @@
-image: javiersantos/android-ci:latest
+image: code0987/android-ci:latest
 
 before_script:
   - git config user.email 'gitlab+ci+bot@ilusons.com'
   - git config user.name 'Gitlab CI Bot'
   - git clone https://Gitlab:$GITLAB_TOKEN@gitlab.com/Code0987/NotiOff-Safe.git safe
+  - npm install
   - export GRADLE_USER_HOME=`pwd`./src/.gradle
   - chmod +x ./src/gradlew
+  - chmod 755 ./src/gradlew
 
 cache:
   key: "$CI_COMMIT_REF_NAME"
@@ -30,10 +32,6 @@ build:
 publish_github:
   only:
     - master
-  image: code0987/java-node:8
   stage: publish
-  before_script:
-    - npm install
   script:
-    - chmod 755 ./src/gradlew
     - npx semantic-release
