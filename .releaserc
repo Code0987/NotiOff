@@ -24,6 +24,14 @@
           }
         ]
       }
+    ],
+    [
+      "@semantic-release/git",
+      {
+        "assets": [
+          "./src/gradle.properties"
+        ]
+      }
     ]
   ]
 }
