@@ -6,7 +6,6 @@ apply plugin: 'com.github.triplet.play'
 def keys_keyAlias = ""
 def keys_keyPassword = ""
 def keys_storePassword = ""
-def keys_serviceAccountEmail = ""
 try {
     def keys = new Properties()
     file("$rootDir/../safe/keys.properties").withInputStream { keys.load(it) }
@@ -14,7 +13,6 @@ try {
     keys_keyAlias = keys.getProperty("keyAlias", "")
     keys_keyPassword = keys.getProperty("keyPassword", "")
     keys_storePassword = keys.getProperty("storePassword", "")
-    keys_serviceAccountEmail = keys.getProperty("serviceAccountEmail", "")
 } catch (ex) {
     println(ex)
 }
@@ -73,11 +71,7 @@ dependencies {
 }
 
 play {
-    serviceAccountEmail=keys_serviceAccountEmail
-    jsonFile=file("$rootDir/../safe/google-play-android-developer.json")
+    serviceAccountCredentials=file("$rootDir/../safe/google-play-android-developer.json")
     track='production'
     userFraction=0.9
-    untrackOld=true
-    errorOnSizeLimit=true
-    uploadImages=false
 }
