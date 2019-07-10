@@ -13,21 +13,19 @@ cache:
   key: "$CI_COMMIT_REF_NAME"
   paths:
     - ./src/.gradle/
-    - ./src/app/build/outputs/apk/
+    - ./src/build/
+    - ./src/app/build/
 
 stages:
-  - build
+  - test
   - publish
 
-build:
+test:
   only:
     - master
-  stage: build
+  stage: test
   script:
-    - ./src/gradlew -p ./src publishReleaseApk
-  artifacts:
-    paths:
-      - ./src/app/build/outputs/apk/
+    - ./src/gradlew -p ./src check
 
 publish:
   only:
@@ -35,6 +33,3 @@ publish:
   stage: publish
   script:
     - npx semantic-release
-  artifacts:
-    paths:
-      - ./src/app/build/outputs/apk/
