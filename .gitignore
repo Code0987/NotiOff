@@ -87,3 +87,4 @@ lint/outputs/
 lint/tmp/
 # lint/reports/
 node_modules
+src/app/src/main/play/release-notes/en-US/default.txt
