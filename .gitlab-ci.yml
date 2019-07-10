@@ -17,22 +17,14 @@ cache:
 
 stages:
   - build
-  - publish
 
 build:
   only:
     - master
   stage: build
   script:
-    - echo 'Build pass.'
     #- ./src/gradlew -p ./src build
+    - npx semantic-release
   artifacts:
     paths:
       - ./src/app/build/outputs/apk/
-
-publish_github:
-  only:
-    - master
-  stage: publish
-  script:
-    - npx semantic-release
