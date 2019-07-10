@@ -17,13 +17,23 @@ cache:
 
 stages:
   - build
+  - publish
 
 build:
   only:
     - master
   stage: build
   script:
-    #- ./src/gradlew -p ./src build
+    - ./src/gradlew -p ./src publishReleaseApk
+  artifacts:
+    paths:
+      - ./src/app/build/outputs/apk/
+
+publish:
+  only:
+    - master
+  stage: publish
+  script:
     - npx semantic-release
   artifacts:
     paths:
