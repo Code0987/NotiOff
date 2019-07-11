@@ -4,6 +4,7 @@ before_script:
   - git config user.email 'devbot@ilusons.com'
   - git config user.name 'Dev Bot'
 
+  - export GPG_TTY=$(tty)
   - echo "$DEVBOT_PRIVATE_KEY" | gpg --import
   - git secret reveal
 
