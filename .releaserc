@@ -1,18 +1,22 @@
 {
   "tagFormat": "v${version}",
   "plugins": [
-    "@semantic-release/commit-analyzer",
+    [
+      "@semantic-release/commit-analyzer",
+      {
+        "preset": "angular"
+      }
+    ],
     [
       "@semantic-release/release-notes-generator",
       {
-        "linkCompare": false,
-        "linkReferences": false
+        "preset": "angular"
       }
     ],
     [
       "@semantic-release/changelog",
       {
-        "changelogFile": "./src/app/src/main/play/release-notes/en-US/default.txt"
+        "changelogFile": "./CHANGELOG.md"
       }
     ],
     [
