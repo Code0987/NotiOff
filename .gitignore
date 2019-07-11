@@ -88,3 +88,4 @@ lint/tmp/
 # lint/reports/
 node_modules
 src/app/src/main/play/release-notes/en-US/
+.gitsecret/keys/random_seed
