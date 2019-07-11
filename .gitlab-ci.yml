@@ -5,7 +5,7 @@ before_script:
   - git config user.name 'Dev Bot'
 
   - export GPG_TTY=$(tty)
-  - echo "$DEVBOT_PRIVATE_KEY" | gpg --import
+  - echo "$DEVBOT_PRIVATE_KEY" | gpg --batch --import
   - git secret reveal
 
   - npm install
