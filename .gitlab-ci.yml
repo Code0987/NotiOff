@@ -4,7 +4,7 @@ before_script:
   - git config user.email 'devbot@ilusons.com'
   - git config user.name 'Dev Bot'
 
-  - echo '$DEVBOT_PRIVATE_KEY' | gpg --import
+  - bash 'gpg --import < (echo "$DEVBOT_PRIVATE_KEY")'
   - git secret reveal
 
   - npm install
