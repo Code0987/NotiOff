@@ -2,6 +2,8 @@
 
 A simple tool to get rid of notifications 🔔
 
+[![GitHub Actions status](https://github.com/Code0987/Notioff/workflows/android%20ci/badge.svg)](https://github.com/Code0987/NotiOff/actions)
+
 [![build status](https://gitlab.com/Code0987/NotiOff/badges/master/build.svg)](https://gitlab.com/Code0987/NotiOff/commits/master)
 
 ### Screenshots
