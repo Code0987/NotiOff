@@ -11,7 +11,7 @@ jobs:
     - uses: actions/checkout@v1
 
     - name: test
-      uses: code0987/android-ci@master
+      uses: code0987/android-ci-github-action@master
       with:
         args: |
           npm install
