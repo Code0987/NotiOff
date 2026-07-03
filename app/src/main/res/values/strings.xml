@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NotiOff</string>
+
+    <string name="bootstrap_loading">Setting up NotiOff…</string>
+    <string name="empty_profiles">No profiles yet.\nTap + to create one, then add apps to silence.</string>
+    <string name="import_failed_banner">Couldn’t import old profiles. Create a new profile to continue.</string>
+
+    <string name="nav_create_profile">Create profile</string>
+    <string name="nav_help">Help</string>
+    <string name="nav_contact">Contact</string>
+    <string name="nav_exit">Exit</string>
+
+    <string name="cd_open_drawer">Open menu</string>
+    <string name="cd_create_profile">Create profile</string>
+    <string name="cd_dismiss">Dismiss</string>
+
+    <string name="profile_app_count">%1$d apps</string>
+    <string name="action_edit_apps">Apps</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_create">Create</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_ok">OK</string>
+    <string name="action_save">Save</string>
+
+    <string name="create_profile_title">New profile</string>
+    <string name="create_profile_hint">Profile name</string>
+    <string name="delete_profile_title">Delete profile?</string>
+    <string name="delete_profile_message">Delete “%1$s”? This cannot be undone.</string>
+
+    <string name="help_title">How NotiOff works</string>
+    <string name="help_body">1. Create a profile and add apps you want to silence.\n2. Activate a profile (or turn on global mute) to cancel those notifications.\n3. Grant Notification access in system settings so NotiOff can silence alerts.\n\nOngoing notifications (calls, media) are never cancelled.</string>
+
+    <string name="contact_email">notioff@ilusons.com</string>
+    <string name="contact_subject">NotiOff feedback</string>
+    <string name="contact_no_app">No email app found</string>
+
+    <string name="package_picker_title">Apps for “%1$s”</string>
+    <string name="package_search_hint">Search apps</string>
+    <string name="package_selected_count">%1$d selected</string>
+    <string name="package_loading">Loading installed apps…</string>
+
+    <string name="perm_listener_title">Notification access required</string>
+    <string name="perm_listener_body">NotiOff needs notification access to silence apps you choose. Your notification contents are not stored or sent anywhere.</string>
+    <string name="perm_listener_action">Open settings</string>
+    <string name="perm_troubleshoot">Troubleshoot</string>
+    <string name="perm_rebind_done">Listener reconnected — toggle access off/on in settings if it still fails.</string>
+    <string name="perm_post_title">Allow status notification</string>
+    <string name="perm_post_body">NotiOff shows a quiet status notification when active. Silencing still works if you deny this.</string>
+    <string name="perm_post_action">Allow</string>
+
+    <string name="status_global">NotiOff active — silencing all</string>
+    <string name="status_profile">NotiOff active — %1$s</string>
+    <string name="status_idle">NotiOff idle — enable global or a profile</string>
+</resources>

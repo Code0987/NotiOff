@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Only DataStore is included. Legacy default.realm under files/ is not included (K20). -->
+<full-backup-content>
+    <include domain="file" path="datastore/" />
+</full-backup-content>

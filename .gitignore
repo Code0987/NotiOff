@@ -92,3 +92,10 @@ node_modules
 
 # secrets
 .gitsecret/keys/random_seed
+
+# Kotlin / modern Android
+.kotlin/
+*.hprof
+
+# Local build outputs
+dist/
